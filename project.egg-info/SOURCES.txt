@@ -1,0 +1,15 @@
+setup.py
+WebScraping/__init__.py
+WebScraping/items.py
+WebScraping/middlewares.py
+WebScraping/pipelines.py
+WebScraping/settings.py
+WebScraping/spiders/AmazonMakeupSpider.py
+WebScraping/spiders/Haircare.py
+WebScraping/spiders/Skincare.py
+WebScraping/spiders/__init__.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
