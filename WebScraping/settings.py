@@ -26,7 +26,7 @@ USER_AGENT = 'Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/I
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-#PROXY_POOL_ENABLED = True
+# PROXY_POOL_ENABLED = True
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -62,12 +62,12 @@ ROBOTSTXT_OBEY = True
 #    'WebScraping.middlewares.WebscrapingDownloaderMiddleware': 543,
 #}
 
-#DOWNLOADER_MIDDLEWARES = {
-    # ...
- #   'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+# DOWNLOADER_MIDDLEWARES = {
+#     ...
+#    'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
 #    'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
-    # ...
-#}
+#     ...
+# }
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
