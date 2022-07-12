@@ -12,7 +12,7 @@ class WebscrapingItem(scrapy.Item):
     Product_Sub_category = scrapy.Field()
     Product_Name = scrapy.Field()
     Product_Price = scrapy.Field()
-    #Product_Description = scrapy.Field()
+    Product_Description = scrapy.Field()
     Product_Rating = scrapy.Field()
     Product_Image = scrapy.Field()
     Product_URL = scrapy.Field()
