@@ -8,6 +8,7 @@ import scrapy
 
 class WebscrapingItem(scrapy.Item):
     # define the fields for your item here like:
+    Product_ID = scrapy.Field()
     Product_Category = scrapy.Field()
     Product_Sub_category = scrapy.Field()
     Product_Name = scrapy.Field()
@@ -17,3 +18,4 @@ class WebscrapingItem(scrapy.Item):
     Product_Image = scrapy.Field()
     Product_URL = scrapy.Field()
     Number_Of_Ratings = scrapy.Field()
+    Reviews = scrapy.Field()
