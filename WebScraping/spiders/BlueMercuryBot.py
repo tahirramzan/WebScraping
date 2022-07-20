@@ -28,7 +28,7 @@ def review_handler(response, product_url, product_dict):
         pass
 
     product_dict['Reviews'] = review_dict
-    yield product_dict
+    return product_dict
 
 
 def product_separator(all_products, cat_name):
@@ -40,7 +40,7 @@ def product_separator(all_products, cat_name):
         product_dict['Product_Price'] = product.css('div.ProductCard__Price::text')
 
         category_dict[f'{cat_name}'] = review_handler(product, product_url, product_dict)
-        yield category_dict  # , product_title, product_url
+        return category_dict  # , product_title, product_url
 
 
 class AmazonMakeupSpider(scrapy.Spider):
@@ -67,6 +67,6 @@ class AmazonMakeupSpider(scrapy.Spider):
 
         full_website = FullWebsite()
         all_products = response.css('div.CollectionsGrid__ProductCards')
-        full_website[f'blue_mercury'] = product_separator(all_products, cat_name=cat_name)
+        full_website['blue_mercury'] = product_separator(all_products, cat_name=cat_name)
 
         yield full_website
