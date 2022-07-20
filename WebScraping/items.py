@@ -12,7 +12,7 @@ class FullWebsite(scrapy.Item):
 
 class WebsiteCategories(scrapy.Item):
     skincare = scrapy.Field()
-    hair = scrapy.field()
+    hair = scrapy.Field()
     body = scrapy.Field()
     fragrances = scrapy.Field()
     tools_accessories = scrapy.Field()
@@ -32,23 +32,19 @@ class WebscrapingItem(scrapy.Item):
     Product_URL = scrapy.Field()
     Product_Image = scrapy.Field()
     Product_Rating = scrapy.Field()
-
     Product_Price = scrapy.Field()
     Product_Description = scrapy.Field()
-
-
-
     Number_Of_Ratings = scrapy.Field()
     Reviews = scrapy.Field()
 
 
 class DataHandler(scrapy.Item):
     # Reviews = scrapy.Field()
-    Product_ID = scrapy.Field()
-    Product_Name = scrapy.Field()
+    Review_Author = scrapy.Field()
+    Review_Title = scrapy.Field()
     Author_ID = scrapy.Field()
     Author_Name = scrapy.Field()
-    # UserNickname = scrapy.Field()
+    Review_Date = scrapy.Field()
     Rating = scrapy.Field()
     Title = scrapy.Field()
-    ReviewText = scrapy.Field()
+    Review_Text = scrapy.Field()

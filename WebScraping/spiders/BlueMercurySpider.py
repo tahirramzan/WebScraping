@@ -1,6 +1,9 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
-from ..items import WebscrapingItem, DataHandler, WebsiteCategories, FullWebsite
+from ..items import WebscrapingItem
+from ..items import DataHandler
+from ..items import WebsiteCategories
+from ..items import FullWebsite
 import os
 import requests
 from time import sleep
@@ -9,8 +12,6 @@ from random import randint
 
 class BlueMercurySpider(scrapy.Spider):
     name = 'BlueMercury'
-    blue_mercury_beauty = FullWebsite()
-
     start_urls = ['https://bluemercury.com/collections/hair']
 
     # path_to_file = os.path.join(os.path.dirname(__file__), 'blueMercury.txt')
@@ -18,7 +19,7 @@ class BlueMercurySpider(scrapy.Spider):
     #     start_urls = [line.strip() for line in file]
 
     def parse(self, response):
-
+        blue_mercury_beauty = FullWebsite()
         cc = 0
         # page = 2
 
@@ -203,10 +204,21 @@ class BlueMercurySpider(scrapy.Spider):
                             # items['Number_Of_Ratings'] = total_results
                             # items['Product_ID'] = product_id
 
-                        items[f'{product_name}'] = product_dict
+                        if product_name == 'bath-body':
+                            cat_name = 'body'
+                        elif product_name == 'tools-accessories':
+                            cat_name = 'tools_accessories'
+                        elif product_name == 'for-men':
+                            cat_name = 'men'
+                        elif product_name == 'best-sellers':
+                            cat_name ='best_sellers'
+                        else:
+                            cat_name = product_name
+
+                        items[f'{cat_name}'] = product_dict
                         yield items
 
-    blue_mercury_beauty['blue_mercury'] = scrape_products_from_response(response, category_name)
+        blue_mercury_beauty['blue_mercury'] = scrape_products_from_response(response, category_name)
 
 
 if __name__ == '__main__':
