@@ -35,7 +35,7 @@ def scrape_products_from_response(response, url):
 
             product_dict['Product_ID'] = product_id = product['id']
             product_dict['Product_Name'] = product_name = product['title']
-            product_dict['Product_URL'] = product_url = f'https://bluemercury.com{product["url"]}'
+            product_dict['Product_URL'] = f'https://bluemercury.com{product["url"]}'
             product_img = ''
             try:
                 product_img = product['images'][0]['src']
@@ -106,4 +106,4 @@ def scrape_products_from_response(response, url):
                 product_dict['Reviews'] = reviews_dict
 
                 print(f'--> Got total reviews {rc}')
-        return product_dict
+        yield product_dict
