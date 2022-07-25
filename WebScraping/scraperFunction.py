@@ -3,7 +3,7 @@ import pathlib
 import requests
 from time import sleep
 from random import randint
-from items import DataHandler, WebscrapingItem
+from .items import DataHandler, WebscrapingItem
 from bs4 import BeautifulSoup as bs
 import csv
 import json
