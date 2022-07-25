@@ -68,5 +68,5 @@ class BlueMercurySpider(scrapy.Spider):
 
         cat_dict[f'{cat_name}'] = scrape_products_from_response(response, cat_name)
 
-        yield cat_dict
+        return cat_dict
 
