@@ -12,7 +12,7 @@ import urllib.request
 
 
 def scrape_products_from_response(response, url):
-    global product_dict
+    # global product_dict
     headers = {
         'authority': 'bluemercury.com',
         'accept': '*/*',

@@ -37,6 +37,7 @@ class BlueMercurySpider(scrapy.Spider):
 
         for page in range(1, 2):
             def total_products_in_cat(url, page):
+
                 headers = {
                     'authority': 'bluemercury.com',
                     'accept': '*/*',
