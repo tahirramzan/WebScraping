@@ -103,7 +103,7 @@ def scrape_products_from_response(response, url):
                     reviews_dict['Review_Title'] = review['Title']
                     reviews_dict['Review_Text'] = review['ReviewText']
 
-                product_dict['Reviews'] = reviews_dict
+                    product_dict['Reviews'] = reviews_dict
 
                 print(f'--> Got total reviews {rc}')
-        yield product_dict
+        return product_dict
