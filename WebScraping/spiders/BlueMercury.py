@@ -14,15 +14,15 @@ import urllib.request
 class BlueMercurySpider(scrapy.Spider):
     name = 'blue_Mercury'
     start_urls = ['http://bluemercury.com/collections/hair',
-                  # 'http://bluemercury.com/collections/makeup',
-                  # 'http://bluemercury.com/collections/bath-body',
-                  # 'http://bluemercury.com/collections/fragrances',
-                  # 'http://bluemercury.com/collections/tools-accessories',
-                  # 'http://bluemercury.com/collections/home',
-                  # 'http://bluemercury.com/collections/suncare',
-                  # 'http://bluemercury.com/collections/for-men',
-                  # 'http://bluemercury.com/collections/gifts',
-                  # 'http://bluemercury.com/collections/best-sellers'
+                  'http://bluemercury.com/collections/makeup',
+                  'http://bluemercury.com/collections/bath-body',
+                  'http://bluemercury.com/collections/fragrances',
+                  'http://bluemercury.com/collections/tools-accessories',
+                  'http://bluemercury.com/collections/home',
+                  'http://bluemercury.com/collections/suncare',
+                  'http://bluemercury.com/collections/for-men',
+                  'http://bluemercury.com/collections/gifts',
+                  'http://bluemercury.com/collections/best-sellers'
                   ]
 
     def parse(self, response):

@@ -20,7 +20,7 @@ class WebsiteCategories(scrapy.Item):
     suncare = scrapy.Field()
     men = scrapy.Field()
     gifts = scrapy.Field()
-    best_seller = scrapy.Field()
+    best_sellers = scrapy.Field()
 
 
 class WebscrapingItem(scrapy.Item):
