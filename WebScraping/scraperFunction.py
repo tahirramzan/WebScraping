@@ -29,8 +29,9 @@ def scrape_products_from_response(response, url):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36 Edg/101.0.1210.32',
     }
     if response:
-        product_dict = WebscrapingItem()
+        prod_list = []
         for pc in range(len(response.json())):
+            product_dict = WebscrapingItem()
             product = response.json()[pc]
 
             product_dict['Product_ID'] = product_id = product['id']
@@ -95,15 +96,28 @@ def scrape_products_from_response(response, url):
                 reviews = reviews_res.json()['Results']
                 reviews_dict = DataHandler()
 
+                review_authors = []
+                review_ratings = []
+                review_author_id = []
+                review_title = []
+                review_text = []
+
                 for review in reviews:
+                    review_authors.append(['UserNickname'])
+                    review_ratings.append(review['Rating'])
+                    review_author_id.append(review['Id'])
+                    review_title.append(review['Title'])
+                    review_text.append(review['ReviewText'])
                     rc += 1
-                    reviews_dict['Review_Author'] = review['UserNickname']
-                    reviews_dict['Rating'] = review['Rating']
-                    reviews_dict['Author_ID'] = review['Id']
-                    reviews_dict['Review_Title'] = review['Title']
-                    reviews_dict['Review_Text'] = review['ReviewText']
 
-                    product_dict['Reviews'] = reviews_dict
+                reviews_dict['Review_Author'] = review_authors
+                reviews_dict['Rating'] = review_ratings
+                reviews_dict['Author_ID'] = review_author_id
+                reviews_dict['Review_Title'] = review_title
+                reviews_dict['Review_Text'] = review_text
 
+                product_dict['Reviews'] = reviews_dict
+
+                prod_list.append(product_dict)
                 print(f'--> Got total reviews {rc}')
-        return product_dict
+            return prod_list

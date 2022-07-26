@@ -76,7 +76,7 @@ class BlueMercurySpider(scrapy.Spider):
 
                 return len(response.json()), response
 
-        total_products, response = total_products_in_cat(url, page)
+            total_products, response = total_products_in_cat(url, page)
 
         cat_dict[f'{cat_name}'] = scrape_products_from_response(response, cat_name)
 
