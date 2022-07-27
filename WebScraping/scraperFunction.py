@@ -103,7 +103,7 @@ def scrape_products_from_response(response, url):
                 review_text = []
 
                 for review in reviews:
-                    review_authors.append(['UserNickname'])
+                    review_authors.append(review['UserNickname'])
                     review_ratings.append(review['Rating'])
                     review_author_id.append(review['Id'])
                     review_title.append(review['Title'])
